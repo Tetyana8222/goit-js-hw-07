@@ -1,14 +1,33 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-console.log(galleryItems);
-//
-const galleryEl = document.querySelector(".gallery");
+const items = galleryItems
+  .map((item) => {
+    return;
+    `<div class="gallery__item">
+  <a class="gallery__link" href="${item.original}">
+    <img
+      class="gallery__image"
+      src="${item.preview}"
+      data-source="${item.original}"
+    alt="${item.description}"
+    />
+  </a>
+</div>;`;
+  })
+  .join("");
 
-function createItems() {
-  const items = [];
+const gallery = document.querySelector(".gallery");
+gallery.innerHTML = items;
 
-  items.forEach((element) => {
-    const { preview, originalSize, description } = elment;
-  });
-}
+console.log(items);
+
+// document.querySelector("button.image").onclick = () => {
+//   basicLightbox
+//     .create(
+//       `
+// 	<img width="1400" height="900" src="https://placehold.it/1400x900">
+// `
+//     )
+//     .show();
+// };
