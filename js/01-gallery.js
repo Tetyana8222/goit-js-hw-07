@@ -29,12 +29,18 @@ function onLinkClick(e) {
   if (e.target.nodeName !== "IMG") {
     return;
   }
-  e.preventDefault;
+  e.preventDefault();
+  const fullSizeItemLink = e.target.dataset.source;
+
+  const instance = basicLightbox.create(` <img src="${fullSizeItemLink}">`);
+
+  instance.show();
+
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Escape") {
+      instance.close();
+
+      document.removeEventListener("keydown", e);
+    }
+  });
 }
-
-//   const instance = basicLightbox.create(`
-//       <img src="assets/images/image.png" width="800" height="600">
-//   `);
-
-//   instance.show();
-// }
