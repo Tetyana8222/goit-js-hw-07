@@ -1,13 +1,13 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-const gallery = document.querySelector(".gallery");
-const gallerMarkup = creatGalleryItemsMarkup(items);
-gallery.insertAdjacentHTML("beforeend", gallerMarkup);
+const galleryContainer = document.querySelector(".gallery");
+const gallerMarkup = creatGalleryMarkup(galleryItems);
+galleryContainer.insertAdjacentHTML("beforeend", gallerMarkup);
 
-function creatGalleryItemsMarkup(items) {
+function creatGalleryMarkup(items) {
   return galleryItems
-    .map((item) => {
+    .map(({ preview, original, description }) => {
       return;
       `<div class="gallery__item">
   <a class="gallery__link" href="${item.original}">
@@ -18,17 +18,9 @@ function creatGalleryItemsMarkup(items) {
     alt="${item.description}"
     />
   </a>
-</div>;`;
+</div>`;
     })
     .join("");
 }
 
-// document.querySelector("button.image").onclick = () => {
-//   basicLightbox
-//     .create(
-//       `
-// 	<img width="1400" height="900" src="https://placehold.it/1400x900">
-// `
-//     )
-//     .show();
-// };
+console.log(galleryItems);
