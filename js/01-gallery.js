@@ -1,7 +1,10 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-// const items = galleryItems
+const gallery = document.querySelector(".gallery");
+const gallerMarkup = creatGalleryItemsMarkup(items);
+gallery.insertAdjacentHTML("beforeend", gallerMarkup);
+
 function creatGalleryItemsMarkup(items) {
   return galleryItems
     .map((item) => {
@@ -19,10 +22,6 @@ function creatGalleryItemsMarkup(items) {
     })
     .join("");
 }
-const gallery = document.querySelector(".gallery");
-gallery.innerHTML = items;
-
-console.log(items);
 
 // document.querySelector("button.image").onclick = () => {
 //   basicLightbox
