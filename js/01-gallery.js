@@ -1,10 +1,12 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-const items = galleryItems
-  .map((item) => {
-    return;
-    `<div class="gallery__item">
+// const items = galleryItems
+function creatGalleryItemsMarkup(items) {
+  return galleryItems
+    .map((item) => {
+      return;
+      `<div class="gallery__item">
   <a class="gallery__link" href="${item.original}">
     <img
       class="gallery__image"
@@ -14,9 +16,9 @@ const items = galleryItems
     />
   </a>
 </div>;`;
-  })
-  .join("");
-
+    })
+    .join("");
+}
 const gallery = document.querySelector(".gallery");
 gallery.innerHTML = items;
 
