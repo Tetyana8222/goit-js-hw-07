@@ -37,7 +37,7 @@ function onLinkClick(e) {
   instance.show();
 
   document.addEventListener("keydown", (e) => {
-    if (e.code === "Escape") {
+    if (e.key === "Escape") {
       instance.close();
 
       document.removeEventListener("keydown", e);
